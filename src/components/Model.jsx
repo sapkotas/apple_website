@@ -4,10 +4,9 @@ import ModelView from "./ModelView";
 import { yellowImg } from "../utils";
 import { useRef, useState, useEffect } from "react";
 import * as THREE from 'three';
-import { models, sizes } from "../constants";
 
 const Model = () => {
-  const [size, setSize] = useState('small');
+  const [size, setSetsize] = useState('small');
   const [model, setModel] = useState({
     title: 'iPhone 15 Pro in Natural Titanium',
     color: ['#8F8A81', '#FFE7B9', '#6F6C64'],
@@ -36,7 +35,6 @@ const Model = () => {
       canvas.eventSource = document.getElementById('root');
     }
   }, []);
-  
 
   return (
     <>
@@ -77,23 +75,7 @@ const Model = () => {
               >
               </canvas>
             </div>
-            <div className="mx-auto w-full">
-            <p className="text-sm font-light text-center mb-5">{model.title}</p>
-            <div className="flex-center ">
-              <ul className="color-container gap-3">
-                {models.map((item, i) => (
-                  <li key={i} className="w-6 h-6 rounded-full mx-2 cursor-pointer" style={{ backgroundColor: item.color[0] }} onClick={() => setModel(item)} />
-                ))}
-              </ul>
-              <button className="size-btn-container">
-                {sizes.map(({ label, value}) => (
-                  <p key={label}  onClick={() => setSize(value)} className="size-btn" style={{ backgroundColor: size === value ? 'white' : 'transparent', color: size === value ? 'black' : 'white'}}>
-                    {label}
-                  </p>
-                ))}
-              </button>
-              </div>
-            </div>
+            <div></div>
           </div>
         </div>
       </section>
